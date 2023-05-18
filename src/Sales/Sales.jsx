@@ -34,7 +34,7 @@ function Sales() {
                         Sales
                     </Heading>
                     <Spacer />
-                    <Link to="/invoice">
+                    <Link to="/sales_form">
                    
                     <Button colorScheme="blue" >
                      

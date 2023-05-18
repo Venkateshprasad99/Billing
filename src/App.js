@@ -6,7 +6,7 @@ import Parties from './Parties/Parties';
 import PartiesForm from "./Parties/PartiesForm";
 import ItemForm from "./Items/ItemForm";
 import Sales from "./Sales/Sales";
-import Invoice from "./Sales/Invoice";
+import SalesForm from "./Sales/SalesForm";
 
 
 
@@ -28,7 +28,7 @@ function App() {
                     <Route path='parties_form'element={<PartiesForm/>}/>
                     <Route path='items'element={<ItemForm/>}/>
                     <Route path='sales'element={<Sales/>}/>
-                    <Route path='invoice'element={<Invoice/>}/>
+                    <Route path='sales_form'element={<SalesForm/>}/>
                    
                    
 
