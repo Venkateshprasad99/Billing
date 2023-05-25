@@ -7,6 +7,7 @@ import PartiesForm from "./Parties/PartiesForm";
 import ItemForm from "./Items/ItemForm";
 import Sales from "./Sales/Sales";
 import SalesForm from "./Sales/SalesForm";
+import StudyForm from "./Services/studyForm";
 
 
 
@@ -29,7 +30,7 @@ function App() {
                     <Route path='items'element={<ItemForm/>}/>
                     <Route path='sales'element={<Sales/>}/>
                     <Route path='sales_form'element={<SalesForm/>}/>
-                   
+                    <Route path='study_form'element={<StudyForm/>}/>
                    
 
                 </Route>

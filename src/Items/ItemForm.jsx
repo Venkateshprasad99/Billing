@@ -42,6 +42,7 @@ const Category = [
 
 function ItemForm() {
     const {
+        
         register,
         control,
         handleSubmit,
