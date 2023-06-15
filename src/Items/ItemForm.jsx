@@ -18,7 +18,8 @@ import {
     RadioGroup,
     Radio, Grid, GridItem,
     Card, CardHeader, CardBody, CardFooter,
-    Spacer, Text, StackDivider, Textarea
+    Spacer, Text, StackDivider, InputLeftAddon,
+    InputRightAddon,InputGroup,Textarea
 } from "@chakra-ui/react";
 import { ArrowBackIcon, AddIcon } from "@chakra-ui/icons";
 import { Select } from "chakra-react-select";
@@ -83,11 +84,11 @@ function ItemForm() {
                                         <FormLabel  > Item Type </FormLabel>
                                         <RadioGroup>
                                             <Stack direction='row' spacing='20%'>
-                                                <Radio value='male'
+                                                <Radio value='product'
                                                     {...register("item_type", {
                                                         required: "Item Type is Required",
                                                     })}>Product </Radio>
-                                                <Radio value='female'
+                                                <Radio value='service'
                                                     {...register("item_type", {
                                                         required: "Item Type is Required",
                                                     })}>service</Radio>
@@ -211,13 +212,20 @@ function ItemForm() {
                                         <GridItem>
                                             <FormControl isInvalid={errors.conv_rate}>
                                                 <FormLabel  >  Conversation Rate </FormLabel>
-                                                <Input
-                                                    type="text"
-                                                    placeholder="Enter Conversation Rate"
+                                                <InputGroup>
+                                           
+                                                <InputLeftAddon children = "+1JAR"/>
+                                             
+  
+                                      <Input type="text" placeholder="Enter Conversation Rate"
+                                                    
                                                     {...register("conv_rate", {
                                                         required: "Conversation Rate is Required",
                                                     })}
-                                                />
+                                               />
+                                               <InputRightAddon children='LAD' />
+  </InputGroup>
+                  
                                                 <FormErrorMessage>
                                                     {errors.conv_rate && errors.conv_rate.message}
                                                 </FormErrorMessage>
@@ -255,13 +263,19 @@ function ItemForm() {
                                         <GridItem>
                                             <FormControl isInvalid={errors.open_stk}>
                                                 <FormLabel  > Opening Stocks </FormLabel>
+                                                <InputGroup>
+                                                
+                                               
+                                                
                                                 <Input
                                                     type="text"
-                                                    placeholder="Enter Opening Stocks "
+                                                    
                                                     {...register("open_stk", {
                                                         required: " Opening Stocks is Required",
                                                     })}
                                                 />
+                                                 <InputRightAddon children = "JAR" />
+                                                </InputGroup>
                                                 <FormErrorMessage>
                                                     {errors.open_stk && errors.open_stk.message}
                                                 </FormErrorMessage>
@@ -269,14 +283,20 @@ function ItemForm() {
                                         </GridItem>
                                         <GridItem>
                                             <FormControl isInvalid={errors.low_stk_unit}>
-                                                <FormLabel  >  Low Stock Unit </FormLabel>
+                                                <FormLabel >  Low Stock Unit </FormLabel>
+                                                <InputGroup>
+   
+   
                                                 <Input
                                                     type="text"
-                                                    placeholder="Enter Low Stock Unit"
+                                                    placeholder=""
                                                     {...register("low_stk_unit", {
                                                         required: "Low Stock Unit is Required",
                                                     })}
                                                 />
+                                                <InputRightAddon children='JAR' />
+
+</InputGroup>
                                                 <FormErrorMessage>
                                                     {errors.low_stk_unit && errors.low_stk_unit.message}
                                                 </FormErrorMessage>
@@ -298,14 +318,19 @@ function ItemForm() {
                                         <GridItem>
                                             <FormControl isInvalid={errors.sale_price}>
                                                 <FormLabel  > Sales Price   </FormLabel>
+                                                <InputGroup>
+                                                
+                                               
                                                 <Input
                                                     type="text"
-                                                    placeholder="Enter Sales Price "
+                                                    
                                                     {...register("sale_price", {
                                                         required: "Sales Price is Required",
                                                     })} 
                                                     
                                                 />
+                                                <InputRightAddon children = "Without Tax"/>
+                                                 </InputGroup>
                                                 <FormErrorMessage>
                                                     {errors.sale_price && errors.sale_price.message}
                                                 </FormErrorMessage>
@@ -313,15 +338,21 @@ function ItemForm() {
                                         </GridItem>
                                         <GridItem>
                                             <FormControl isInvalid={errors.pur_price}>
-                                                <FormLabel  > Purchase Price </FormLabel>
+                                                <FormLabel > Purchase Price </FormLabel>
+                                                <InputGroup>
+                                                
+                                              
                                                 <Input
                                                     type="text"
-                                                    placeholder="Enter Purchase Price"
+                                                
                                                     {...register("pur_price", {
                                                         required: "Purchase Price is Required",
                                                     })}
+                                                    />
+                                                    <InputRightAddon children='Without Tax' />
+                                                      </InputGroup>
 
-                                                />
+                                                
                                                 <FormErrorMessage>
                                                     {errors.pur_price && errors.pur_price.message}
                                                 </FormErrorMessage>

@@ -12,6 +12,8 @@
     "api": "^5.0.8",
     "chakra-react-select": "^4.6.0",
     "react": "^18.2.0",
+    "react-addons": "^0.9.1-deprecated",
+    "react-addons-create-fragment": "^15.6.2",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",

@@ -1,16 +1,40 @@
-import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-export const  studyFormApi = createApi({
-    reducerPath: "studyFormApi",
-    baseQuery: fetchBaseQuery({
-        baseUrl: "https://www.w3schools.com/"
-    }),
-    endpoints: (builder) => ({
-        getStudyForm: builder.query({
-            url:"todos",
-            method:"GET"
-            // query: (studyFormId) => `/study-forms/${studyFormId}`,
-        }),
-    }),
-});
+/* React-specific entry point that automatically generates
+   hooks corresponding to the defined endpoints */
+   import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const {useGetDataQuery} = studyFormApi; 
+   export const studyFormApi = createApi({
+     reducerPath: "studyFormApi",
+     baseQuery: fetchBaseQuery({
+       baseUrl: "https://jsonplaceholder.typicode.com/",
+     }),
+     
+     endpoints: (build) => ({
+       getData: build.query({
+         query: () => ({
+           url: "todos",
+           method: "GET",
+         }),
+       }),
+       getDataById: build.query({
+         query: (id) => ({
+           url: `todos/${id}`,
+           method: "GET",
+         }),
+       }),
+       postData: build.mutation({
+         query: (data) => ({
+           url: "posts",
+           method: "POST",
+           body: data,
+           headers: {
+             "Content-type": "application/json; charset=UTF-8",
+           },
+         }),
+       }),
+     }),
+   });
+   
+   export const { useGetDataQuery, useGetDataByIdQuery, usePostDataMutation } =
+     studyFormApi;
+   
+   
