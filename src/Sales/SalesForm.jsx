@@ -30,7 +30,7 @@ import {
 } from "@chakra-ui/react";
 import { ArrowBackIcon, DeleteIcon } from "@chakra-ui/icons";
 import { Select } from "chakra-react-select"; 
-import { useGetDataQuery,useGetDataByIdQuery } from "../Services/studyFormApi";
+import { useGetDataQuery, useGetDataByIdQuery } from "../Services/studyFormApi";
 
 
 const Customer = [
@@ -125,7 +125,8 @@ function SalesForm() {
     const navi = useNavigate();
     const {data: studyData} = useGetDataQuery();
 console.log(studyData);
-    
+const {data: studyDataById} = useGetDataByIdQuery(1);
+console.log(studyDataById);
 
 
     const [total, setTotal] = useState(0);
@@ -195,7 +196,7 @@ console.log(studyData);
         <>
             <Box bg="white" p={5} mb={5} style={{ borderRadius: "10px" }}>
                 <Flex alignItems='center' gap={2}  >
-                    <Link to="/dashboard">
+                    <Link to="/sales">
                         <ArrowBackIcon w={6} h={6} />
                     </Link> &nbsp;
                     <Heading as="h3" size="lg"  >

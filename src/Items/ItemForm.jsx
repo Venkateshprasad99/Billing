@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 import {
     Box,
@@ -42,6 +42,7 @@ const Category = [
 
 
 function ItemForm() {
+    const Navi = useNavigate();
     const {
         
         register,
@@ -59,7 +60,7 @@ function ItemForm() {
         <>
             <Box bg="white" p={5} mb={5} style={{ borderRadius: "10px" }}>
                 <Flex alignItems='center' gap={2}  >
-                    <Link to="/dashboard">
+                    <Link to="/items">
                         <ArrowBackIcon w={6} h={6} />
                     </Link> &nbsp;
                     <Heading as="h3" size="lg"  >

@@ -21,20 +21,11 @@
            method: "GET",
          }),
        }),
-       postData: build.mutation({
-         query: (data) => ({
-           url: "posts",
-           method: "POST",
-           body: data,
-           headers: {
-             "Content-type": "application/json; charset=UTF-8",
-           },
-         }),
-       }),
+       
      }),
    });
    
-   export const { useGetDataQuery, useGetDataByIdQuery, usePostDataMutation } =
+   export const { useGetDataQuery, useGetDataByIdQuery } =
      studyFormApi;
    
    

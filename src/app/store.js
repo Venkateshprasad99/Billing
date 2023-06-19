@@ -6,5 +6,7 @@ export const store = configureStore({
         study: studyReducer,
         [studyFormApi.reducerPath]:studyFormApi.reducer,
     },
+    middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(studyFormApi.middleware),
+});
    
-})
